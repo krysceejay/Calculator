@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <title>NEW CAL</title>
+        <meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+        <script type="text/javascript" src="js/respond.js"></script>
+       	<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/cal_style.css">
+
+    </head>
+    <body>
+    		
+        			<div class="cal">
+			<div id="input" class="display" name= "display"></div>
+						
+			<div class="buttons">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="xraiseybtn" onclick="add()">x<sup>y</sup></button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="eraisexbtn" onclick="exp(form)">e<sup>x</sup></button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="yrootxbtn" onclick="addroot()"><sup>y</sup>&#8730;x</button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="10raisexbtn" onclick="tenpow()">10<sup>x</sup></button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="modbtn" value="mod">Mod</button>
+			</div>
+			
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="sinhinvbtn" onclick="asinh(form)">sinh<sup>-1</sup></button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="coshinvbtn" onclick="acosh(form)">cosh<sup>-1</sup></button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="tanhinvbtn" onclick="atanh(form)">tanh<sup>-1</sup></button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="permbtn" onclick="addp()"><sup>n</sup>P<sub>r</sub></button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="combtn" onclick="addc()"><sup>n</sup>C<sub>r</sub></button>
+				</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="sinhbtn" onclick="sinh(form)">unknown</button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="sinhbtn" onclick="sinh(form)">sinh</button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="coshbtn" onclick="cosh(form)">cosh</button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="tanhbtn" onclick="tanh(form)">tanh</button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="cbrtbtn" onclick="cbrt(form)"><sup>3</sup>&#8730;</button>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="lnbtn" onclick="ln(form)">ln</button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="sininvbtn" onclick="asin(form)">sin<sup>-1</sup></button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="cosinvbtn" onclick="acos(form)">cos<sup>-1</sup></button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="taninvbtn" onclick="atan(form)">tan<sup>-1</sup></button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="degbtn" value="degrees">deg</button>
+			</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="logbtn" onclick="log(form)">log</button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="sinbtn" onclick="sin(form)">sin</button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="cosbtn" onclick="cos(form)">cos</button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="tanbtn" onclick="tan(form)">tan</button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="expbtn" value="exp">Exp</button>
+			</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="percentbtn" onclick="percent()">%</button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="sqrtbtn" onclick="sqrt(form)">&#8730;</button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="sqbtn" onclick="square(form)">x&sup2;</button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="cubebtn" onclick="cube(form)">x&sup3;</button>
+			<button class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="fracbtn" onclick="inverseNum()"><sup>1</sup>&frasl;x</button>
+			</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="secfunct">&uarr;</button>
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="clear">CE</button>
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="reset" onclick="input.innerHTML = 0 ">C</button>
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="clearoneback" onclick="deleteChar()">&#171;</button>
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="divbtn" onclick="addChar('/')">&#247;</button>
+			</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="piebtn" onclick="pie()">&pi;</button>
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="btn7" onclick="addChar('7')">7</button>
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="btn8" onclick="addChar('8')">8</button>
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="btn9" onclick="addChar('9')">9</button>
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="multbtn" onclick="addChar('*')">&#215;</button>
+			</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="factbtn" onclick="input.innerHTML = fact(input.innerHTML)">n!</button>
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="btn4" onclick="addChar('4')">4</button>
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="btn5" onclick="addChar('5')">5</button>
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="btn6" onclick="addChar('6')">6</button>
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="subbtn" onclick="addChar('-')">-</button>
+			</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="plusmn" onclick="changeSign()">&#177;</button>
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="btn1" onclick="addChar('1')">1</button>
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="btn2" onclick="addChar('2')">2</button>
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="btn3" onclick="addChar('3')">3</button>
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="addbtn" onclick="addChar('+')">+</button>
+			</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="bracopenbtn" onclick="addChar('(')">(</button>
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="bracclosebtn" onclick="addChar(')')">)</button>
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="btn0" onclick="addChar('0')">0</button>
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" type="button" name="btndeci" onclick="addChar('.')">.</button>
+			<button class="btn btn-success col-lg-2 col-md-2 col-sm-2 col-xs-2" id="eql" type="button" name="equalbtn" onclick="solution()">=</button></div>
+						</div>
+					</div>
+          
+		
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="newcal.js"></script>
+    </body>
+</html>
